@@ -1,7 +1,25 @@
+import Cta from "@/components/cta";
+import Fact from "@/components/fact";
+import Faq from "@/components/faq";
+import Games from "@/components/games";
+import Hero from "@/components/hero";
+import MeetTheExpert from "@/components/meet-the-expert";
+import Solution from "@/components/solution";
+import TrustedBy from "@/components/trusted-by";
+import Why from "@/components/why";
+
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      page
-    </div>
+    <>
+      <Hero />
+      <Fact />
+      <Solution />
+      <Why />
+      <Games />
+      <TrustedBy />
+      <MeetTheExpert />
+      <Faq />
+      <Cta />
+    </>
   );
 }
