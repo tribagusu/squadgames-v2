@@ -37,7 +37,7 @@ export default function ProductItem({ product, faq }) {
                   </span>
                 </div>
               </div>
-              <p className="mb-5 max-w-[85%]">
+              <p className="mb-5 md:max-w-[85%]">
                 {product.fields.description.toLocaleString()}
               </p>
               <div className="my-[1rem]">
@@ -54,13 +54,13 @@ export default function ProductItem({ product, faq }) {
               </div>
             </div>
             {/* ===== right ===== */}
-            <div className="flex rounded-xl relative overflow-hidden">
+            <div className="flex rounded-xl max-h-96 relative overflow-hidden">
               <Image
                 src={`https:${product.fields.image.fields?.file?.url}`}
                 width={product.fields.image.fields.file.details.image.width}
                 height={product.fields.image.fields.file.details.image.height}
                 alt="image"
-                className="w-[450px] md:w-[500px] lg:w-[600px] xl:w-[700px] lg:mt-[-3rem] mb-[3rem] object-cover"
+                className="w-full min-h-120 md:w-[500px] lg:w-[600px] xl:w-[700px] lg:mt-[-3rem] mb-[3rem] object-cover"
               />
             </div>
           </div>
