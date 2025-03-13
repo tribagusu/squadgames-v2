@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { IoLogoWhatsapp } from "react-icons/io";
-// import "styles/styles.css";
 import { FaUserTag } from "react-icons/fa";
 import { MdTimer } from "react-icons/md";
 import Photos from "./photos";
@@ -9,6 +8,7 @@ import ProductFaq from "./product-faq";
 import Methods from "./methods";
 import CaseStudiesCard from "./case-studies-card";
 import Topics from "./topics";
+import Spinner from "./ui/spinner";
 
 export default function ProductItem({ product, faq }) {
   return (
@@ -54,15 +54,19 @@ export default function ProductItem({ product, faq }) {
               </div>
             </div>
             {/* ===== right ===== */}
-            <div className="flex rounded-xl max-h-96 relative overflow-hidden">
-              <Image
-                src={`https:${product.fields.image.fields?.file?.url}`}
-                width={product.fields.image.fields.file.details.image.width}
-                height={product.fields.image.fields.file.details.image.height}
-                alt="image"
-                className="w-full min-h-120 md:w-[500px] lg:w-[600px] xl:w-[700px] lg:mt-[-3rem] mb-[3rem] object-cover"
-              />
-            </div>
+            {!product.fields.image.fields.file.url ? (
+              <Spinner />
+            ) : (
+              <div className="flex rounded-xl max-h-96 relative overflow-hidden">
+                <Image
+                  src={`https:${product.fields.image.fields.file.url}`}
+                  width={product.fields.image.fields.file.details.image.width}
+                  height={product.fields.image.fields.file.details.image.height}
+                  alt="image"
+                  className="w-full min-h-120 md:w-[500px] lg:w-[600px] xl:w-[700px] lg:mt-[-3rem] mb-[3rem] object-cover"
+                />
+              </div>
+            )}
           </div>
         </div>
       </section>
