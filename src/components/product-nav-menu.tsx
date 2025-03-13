@@ -1,11 +1,9 @@
-// import { ProductNavMenuItem } from "../types/nav.types";
 import Link from "next/link";
 import { Tab, TabPanel, TabPanels, TabGroup, TabList } from "@headlessui/react";
 import { HiArrowLongRight } from "react-icons/hi2";
 import { productNavMenuConfigData } from "@/config/nav.config";
 
 type TProductNavMenuProps = {
-  // productNav?: ProductNavMenuItem;
   showDropdown: boolean;
   setShowDropdown: React.Dispatch<React.SetStateAction<boolean>>;
 };

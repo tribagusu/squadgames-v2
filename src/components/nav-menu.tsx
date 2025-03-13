@@ -5,12 +5,10 @@ import { navMenuConfigData } from "@/config/nav.config";
 import { IoIosArrowDown } from "react-icons/io";
 import { useState } from "react";
 import ProductNavMenu from "./product-nav-menu";
+import NavMenuHamburger from "./nav-menu-hamburger";
+import NavMenuMobile from "./nav-menu-mobile";
 
-export default function NavMenu() {
-  // const [showInfo, setShowInfo] = useState(true);
-  // const [showNav, setShowNav] = useState(false);
-  const [showDropdown, setShowDropdown] = useState(false);
-
+export default function NavMenu({ setShowDropdown, showDropdown }) {
   return (
     <>
       {navMenuConfigData?.length ? (
@@ -39,11 +37,6 @@ export default function NavMenu() {
           ))}
         </nav>
       ) : null}
-
-      <ProductNavMenu
-        showDropdown={showDropdown}
-        setShowDropdown={setShowDropdown}
-      />
     </>
   );
 }

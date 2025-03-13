@@ -28,13 +28,13 @@ module.exports = {
         body: ["Open Sans"],
       },
     },
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1260px",
-      },
-    },
+    // container: {
+    //   center: true,
+    //   padding: "2rem",
+    //   screens: {
+    //     "2xl": "1260px",
+    //   },
+    // },
   },
   // plugins: [require("@headlessui/tailwindcss")],
 };

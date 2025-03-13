@@ -10,11 +10,10 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
 }) {
+  const params = await props.params;
   const products = await client.getEntries({ content_type: "product" });
   const product = products?.items?.find(
     (product) => product.fields.slug === params.slug
@@ -26,7 +25,10 @@ export async function generateMetadata({
   };
 }
 
-const Product = async ({ params }: { params: { slug: string } }) => {
+export default async function Page(props: {
+  params: Promise<{ slug: string }>;
+}) {
+  const params = await props.params;
   const data = await client.getEntries({ content_type: "product" });
   const product = data?.items?.find(
     (product) => product.fields.slug === params.slug
@@ -42,6 +44,4 @@ const Product = async ({ params }: { params: { slug: string } }) => {
       <ProductItem product={product} faq={faq} />
     </>
   );
-};
-
-export default Product;
+}

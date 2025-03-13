@@ -18,7 +18,7 @@ export async function generateStaticParams(): Promise<
   return params;
 }
 
-export async function generateMetadata(props: { params: TParams }) {
+export async function generateMetadata(props: { params: Promise<TParams> }) {
   const articles = await client.getEntries({ content_type: "caseStudy" });
   const params = await props.params;
   const slug = params.slug;
@@ -34,7 +34,7 @@ export async function generateMetadata(props: { params: TParams }) {
   };
 }
 
-export default async function CaseStudy(props: { params: TParams }) {
+export default async function Page(props: { params: Promise<TParams> }) {
   const params = await props.params;
   const slug = params.slug;
   const entry = await client.getEntries<CaseStudyEntry>({

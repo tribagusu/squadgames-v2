@@ -8,7 +8,7 @@ import Solution from "@/components/solution";
 import TrustedBy from "@/components/trusted-by";
 import Why from "@/components/why";
 
-export default function Home() {
+export default function Page() {
   return (
     <>
       <Hero />

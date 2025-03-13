@@ -14,9 +14,10 @@ export default function ProductItem({ product, faq }) {
   return (
     <>
       <section className="space-y-6 pt-[3rem] md:pt-[5rem] pb-[1rem]">
-        <div className="flex-row">
-          <div className="container grid-cols-1 grid md:grid-cols-[1fr,1fr] gap-10 mb-[2rem]">
-            <div className="flex flex-col">
+        <div className="flex-row ">
+          <div className="container flex flex-col md:flex-row gap-10 mb-[2rem]">
+            {/* ===== left ===== */}
+            <div className="flex flex-col w-full md:w-[50%]">
               <h1 className="text-[2rem] leading-none md:text-[40px] font-semibold mb-5">
                 {product.fields.name.toLocaleString()}
               </h1>
@@ -52,6 +53,7 @@ export default function ProductItem({ product, faq }) {
                 </Link>
               </div>
             </div>
+            {/* ===== right ===== */}
             <div className="flex rounded-xl relative overflow-hidden">
               <Image
                 src={`https:${product.fields.image.fields?.file?.url}`}

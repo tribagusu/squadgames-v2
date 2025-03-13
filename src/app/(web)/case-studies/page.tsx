@@ -15,7 +15,7 @@ async function getData() {
   return res;
 }
 
-const CaseStudies = async () => {
+export default async function Page() {
   const data = await getData();
 
   return (
@@ -67,6 +67,4 @@ const CaseStudies = async () => {
       </section>
     </>
   );
-};
-
-export default CaseStudies;
+}
